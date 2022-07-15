@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Attack
+  - Enemy
+  - ReturnPosition
+  - Interacting
   layers:
   - Default
   - TransparentFX
@@ -14,9 +17,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Player
+  - Attack
   - 
   - 
   - 
@@ -47,4 +50,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3956568131
+    locked: 0
+  - name: UI
+    uniqueID: 4255007393
     locked: 0

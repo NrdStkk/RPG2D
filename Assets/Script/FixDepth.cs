@@ -12,15 +12,17 @@ public class FixDepth : MonoBehaviour
     {
         spr = GetComponent<SpriteRenderer>();
         spr.sortingLayerName = "Player";
-        spr.sortingOrder = Mathf.RoundToInt(-transform.position.y * 1000);
+        spr.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // TROCAR O UPDER POR ON PRE RENDER
+
         if (fixEveryFrame)
         {
-            spr.sortingOrder = Mathf.RoundToInt(-transform.position.y * 1000);
+            spr.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
         }
     }
 }

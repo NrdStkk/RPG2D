@@ -5,23 +5,19 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     /*
-     * Classe pai para inimigos com os status comuns deles
+     *  Classe pai que os inimigos irão herdar, com os valores communs entre cada
      */
+    
 
-    public int hp;
+    /*
+     * Variáveis comuns em todos os tipos de inimigos
+     */
+    public int enemyHealth;
+    public float enemyMoveSpeed;
+    public int coinDrop;
     public string enemyName;
-    public float dmg;
-    public float spd;
+    public float enemyDamage;
+    public Rigidbody2D enemyRigidbody;
+    public Animator enemyAnimator;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -10,7 +10,7 @@ public class Destruicao : MonoBehaviour
     public float timeForDisable;
 
     //Animador para controlar a animação
-    Animator anim;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()

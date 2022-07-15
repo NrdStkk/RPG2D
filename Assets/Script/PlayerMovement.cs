@@ -1,77 +1,133 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour {
 
-    private float spd = 7f;
+    /*
+     * Enumerador que define os possiveis estados do player
+     */
+    public enum PlayerState
+    {
+        idle,
+        walking,
+        attacking,
+        interacting,
+        dead
+    }
+
+    /*
+     * Variáveis
+     */
+    public PlayerState currentState;
+    private float spd = 6f;
     private Vector2 vector;
     private Rigidbody2D rb;
     private Animator anim;
     private CircleCollider2D attackCollider;
+    private CircleCollider2D interactCollider;
+    public Button btnAttack;
+    public Button btnInteract;
+
 
     public void Start()
     {
+        currentState = PlayerState.idle;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        btnAttack.onClick.AddListener(Attack);
+        btnInteract.onClick.AddListener(Interact);
 
-        attackCollider = transform.GetChild(0).GetComponent<CircleCollider2D>();
-        attackCollider.enabled = false;
+        attackCollider = GameObject.FindGameObjectWithTag("Attack").GetComponent<CircleCollider2D>();
+        attackCollider.gameObject.SetActive(false);
+        interactCollider = GameObject.FindGameObjectWithTag("Interacting").GetComponent<CircleCollider2D>();
+        interactCollider.gameObject.SetActive(false);
     }
 
-    public void Mover(float h, float v)
-    {
-        AnimatorControl();
-        vector = new Vector2(h * spd, v * spd);
-        rb.velocity = vector;
+    public void Update()
+    { 
+
+        if (Input.GetMouseButtonDown(1) && currentState != PlayerState.interacting)
+        {
+            Interact();
+        }
+        else if (Input.GetMouseButtonDown(2) && currentState != PlayerState.attacking)
+        {
+            Attack();
+        }
+
+        //  Comando de movimento para desktop
+        //Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+        //  Comando de movimento para mobile
+        Move(SimpleInput.GetAxis("Horizontal"), SimpleInput.GetAxis("Vertical"));
+
         anim.SetFloat("moveX", vector.x);
         anim.SetFloat("moveY", vector.y);
-        
     }
 
-    private void AnimatorControl() 
+    public void Move(float h, float v)
     {
-        if (vector.x != 0 || vector.y != 0)
+        if (currentState == PlayerState.attacking)
         {
+            rb.velocity = Vector2.zero;
+        }
+        else if (h != 0 || v != 0)
+        {
+            currentState = PlayerState.walking;
+            vector = new Vector2(h * spd, v * spd);
             anim.SetBool("moving", true);
+            rb.velocity = vector;
         }
         else
         {
             anim.SetBool("moving", false);
+            currentState = PlayerState.idle;
+            rb.velocity = Vector2.zero;
         }
     }
 
-    public void Update()
+    public void Interact()
     {
-        Mover(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        StartCoroutine(InteractCo());
+    }
 
-        //Este comando busca o estado atual do player, e garante que ele não consiga atacar, antes de terminar a cena do primeiro ataque (20 ms)
-        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-        bool attacking = stateInfo.IsName("Player_Attack");
+    public void Attack()
+    {
+        currentState = PlayerState.attacking;
+        StartCoroutine(AttackCo());
+    }
 
-        //Comando que ao pressionar, ativa o Trigger de ataque
-        if (Input.GetKeyDown("e") || Input.GetMouseButtonDown(0) && !attacking)
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Enemy")
         {
-            anim.SetTrigger("attacking");
+            PauseGame.gameOver = true;
+            currentState = PlayerState.dead;
         }
+    }
 
-        if (vector != Vector2.zero)
-        {
-            attackCollider.offset = new Vector2(vector.x / 10, vector.y / 10);
-        }
+    private IEnumerator AttackCo()
+    {
+        anim.SetBool("attacking", true);
+        anim.SetBool("moving", false);
+        attackCollider.gameObject.SetActive(true);
+        yield return null;
+        anim.SetBool("attacking", false);
+        yield return new WaitForSeconds(.22f);
+        attackCollider.gameObject.SetActive(false);
+        currentState = PlayerState.idle;
+    }
 
-        if (attacking)
-        {
-            float playbackTime = stateInfo.normalizedTime;
-            if (playbackTime > 0.63 && playbackTime < 1.266)
-            {
-                attackCollider.enabled = true;
-            }else
-            {
-                attackCollider.enabled = false;
-            }
-            
-        }
+    private IEnumerator InteractCo()
+    {
+        interactCollider.gameObject.SetActive(true);
+        currentState = PlayerState.interacting;
+        yield return new WaitForSeconds(0.5f);
+        interactCollider.gameObject.SetActive(false);
+        currentState = PlayerState.idle;
     }
 
 }
