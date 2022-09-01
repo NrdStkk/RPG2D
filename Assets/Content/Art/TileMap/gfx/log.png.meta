@@ -75,7 +75,7 @@ TextureImporter:
       213: -9054709979500662635
     second: log_23
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -95,6 +95,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -104,8 +106,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -114,7 +116,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -126,9 +128,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -178,6 +184,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -185,12 +215,12 @@ TextureImporter:
       name: log_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 98
-        width: 21
-        height: 23
+        x: 0
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,12 +236,12 @@ TextureImporter:
       name: log_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 98
-        width: 20
-        height: 22
+        x: 32
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -227,12 +257,12 @@ TextureImporter:
       name: log_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 98
-        width: 21
-        height: 23
+        x: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -248,12 +278,12 @@ TextureImporter:
       name: log_3
       rect:
         serializedVersion: 2
-        x: 101
-        y: 98
-        width: 20
-        height: 22
+        x: 96
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -269,12 +299,12 @@ TextureImporter:
       name: log_4
       rect:
         serializedVersion: 2
-        x: 132
-        y: 97
-        width: 28
-        height: 25
+        x: 128
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -290,12 +320,12 @@ TextureImporter:
       name: log_5
       rect:
         serializedVersion: 2
-        x: 165
-        y: 98
-        width: 20
-        height: 19
+        x: 160
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -311,12 +341,12 @@ TextureImporter:
       name: log_6
       rect:
         serializedVersion: 2
-        x: 7
-        y: 66
-        width: 21
-        height: 23
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -332,12 +362,12 @@ TextureImporter:
       name: log_7
       rect:
         serializedVersion: 2
-        x: 39
-        y: 66
-        width: 20
-        height: 22
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -353,12 +383,12 @@ TextureImporter:
       name: log_8
       rect:
         serializedVersion: 2
-        x: 71
-        y: 66
-        width: 21
-        height: 23
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -374,12 +404,12 @@ TextureImporter:
       name: log_9
       rect:
         serializedVersion: 2
-        x: 104
-        y: 66
-        width: 19
-        height: 22
+        x: 96
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -395,12 +425,12 @@ TextureImporter:
       name: log_10
       rect:
         serializedVersion: 2
-        x: 132
-        y: 65
-        width: 27
-        height: 25
+        x: 128
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -416,12 +446,12 @@ TextureImporter:
       name: log_12
       rect:
         serializedVersion: 2
-        x: 163
-        y: 65
-        width: 21
-        height: 22
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -437,12 +467,12 @@ TextureImporter:
       name: log_13
       rect:
         serializedVersion: 2
-        x: 10
-        y: 35
-        width: 13
-        height: 24
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -458,12 +488,12 @@ TextureImporter:
       name: log_14
       rect:
         serializedVersion: 2
-        x: 42
-        y: 34
-        width: 13
-        height: 24
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -479,12 +509,12 @@ TextureImporter:
       name: log_15
       rect:
         serializedVersion: 2
-        x: 74
-        y: 35
-        width: 13
-        height: 24
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -500,12 +530,12 @@ TextureImporter:
       name: log_16
       rect:
         serializedVersion: 2
-        x: 106
-        y: 34
-        width: 14
-        height: 24
+        x: 128
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -521,12 +551,12 @@ TextureImporter:
       name: log_17
       rect:
         serializedVersion: 2
-        x: 132
-        y: 33
-        width: 27
-        height: 25
+        x: 160
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -542,12 +572,12 @@ TextureImporter:
       name: log_18
       rect:
         serializedVersion: 2
-        x: 157
-        y: 33
-        width: 27
-        height: 25
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -563,12 +593,12 @@ TextureImporter:
       name: log_19
       rect:
         serializedVersion: 2
-        x: 10
-        y: 3
-        width: 13
-        height: 24
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -584,12 +614,12 @@ TextureImporter:
       name: log_20
       rect:
         serializedVersion: 2
-        x: 42
-        y: 2
-        width: 13
-        height: 24
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -605,12 +635,12 @@ TextureImporter:
       name: log_21
       rect:
         serializedVersion: 2
-        x: 74
-        y: 3
-        width: 13
-        height: 24
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -626,12 +656,12 @@ TextureImporter:
       name: log_22
       rect:
         serializedVersion: 2
-        x: 106
-        y: 2
-        width: 13
-        height: 24
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -647,12 +677,12 @@ TextureImporter:
       name: log_23
       rect:
         serializedVersion: 2
-        x: 133
-        y: 1
-        width: 26
-        height: 24
+        x: 160
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -660,6 +690,27 @@ TextureImporter:
       bones: []
       spriteID: 590bdaf5f35375280800000000000000
       internalID: -9054709979500662635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: log_11
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d1c2f4aaf755044b28448b02869219
+      internalID: -440031981
       vertices: []
       indices: 
       edges: []
@@ -674,6 +725,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      log_21: 5566842953363755866
+      log_16: 3107883342233372815
+      log_6: -451413936476517383
+      log_20: -2086765476746818828
+      log_1: -8771329076928401280
+      log_8: 3059174765694063163
+      log_0: -5034061168752090764
+      log_2: 2376815873980901129
+      log_14: 681774289175886536
+      log_12: 8498479158080882289
+      log_17: -822619953307990688
+      log_7: 8458950633466780684
+      log_19: -3791062316690792145
+      log_18: -128083769461270964
+      log_13: -6457386710923275188
+      log_4: 8213902188476598959
+      log_15: 2703527186074568732
+      log_9: -34017176892466219
+      log_3: -1512028583440225198
+      log_11: -440031981
+      log_10: -5690133823277906687
+      log_23: -9054709979500662635
+      log_5: -22439546833456996
+      log_22: -7445369939883215787
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
